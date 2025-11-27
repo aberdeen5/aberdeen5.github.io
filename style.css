@@ -15,17 +15,34 @@ body {
     padding: 0 30px;
 }
 
-/* =========================================
-   BEREICHE ALLGEMEIN MIT 3PX RAHMEN
-   ========================================= */
-.area {
-    padding: 30px 30px; /* gleichmäßig oben/unten + links/rechts */
-    margin-bottom: 10px; /* sehr kleiner Abstand zwischen Bereichen */
-    border-radius: 8px;
-    border: 3px solid;
+/* Desktop-Skalierung auf 70% */
+@media (min-width: 701px) {
+    .content-container {
+        width: 70%;
+        transform: scale(0.7);
+        transform-origin: top center;
+    }
 }
 
-/* Subtile Farbunterschiede + Rahmen leicht dunkler */
+/* Mobile unverändert */
+@media (max-width: 700px) {
+    .content-container {
+        width: 100%;
+        transform: scale(1);
+    }
+}
+
+/* =========================================
+   BEREICHE
+   ========================================= */
+.area {
+    padding: 20px 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 3px solid;
+    box-sizing: border-box;
+}
+
 .area-1 { background-color: #1a1a1a; border-color: #141414; }
 .area-2 { background-color: #202020; border-color: #181818; }
 .area-3 { background-color: #242424; border-color: #1c1c1c; }
@@ -33,13 +50,13 @@ body {
 .area-5 { background-color: #181818; border-color: #101010; }
 
 /* =========================================
-   BEREICH 1: PROFIL ZENTRIERT
+   PROFIL
    ========================================= */
 .area-inner-center {
     display: flex;
-    flex-direction: column; /* Bild über Name über Text */
-    align-items: center;    /* horizontal zentriert */
-    text-align: center;     /* Text mittig */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 20px;
 }
 
@@ -47,7 +64,7 @@ body {
     width: 500px;
     height: 500px;
     object-fit: cover;
-    border-radius: 20px; /* abgerundete Ecken */
+    border-radius: 20px;
     border: 3px solid #2a2a2a;
 }
 
@@ -56,23 +73,22 @@ body {
     margin: 0;
 }
 
-.area-1 p {
-    font-size: 1.2em;
+.area-1 .welcome-text {
+    font-size: 2em;
     color: #bfbfbf;
     font-style: italic;
-    margin-top: 10px;
+    margin: 0;
 }
 
 /* =========================================
-   HEADINGS MIT ICONS
+   HEADINGS
    ========================================= */
 h2 {
     font-size: 1.9em;
-    margin-bottom: 20px;
+    margin: 0 0 15px 0;
     display: flex;
     align-items: center;
     gap: 12px;
-    color: #e6e6e6;
 }
 
 .icon-blue {
@@ -80,28 +96,31 @@ h2 {
 }
 
 /* =========================================
-   LISTEN UND ICONS
+   LISTEN
    ========================================= */
 .simple-list, .about-list, .contact-list {
     list-style: none;
-    padding-left: 0;
-    margin-top: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .simple-list li, .about-list li, .contact-list li {
     display: flex;
     align-items: center;
-    margin: 6px 0;
+    gap: 12px;
     font-size: 1.15em;
     line-height: 1.6;
+    margin: 10px 0;
 }
 
 .simple-list li i,
 .about-list li i,
 .contact-list li i {
-    margin-right: 12px; /* Abstand Icon-Text */
     min-width: 20px;
     flex-shrink: 0;
+    display: inline-block;
+    line-height: 1;
+    margin: 0;
 }
 
 /* =========================================
@@ -116,9 +135,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* =========================================
-   RESPONSIVE
-   ========================================= */
+/* MOBILE PROFILBILD */
 @media (max-width: 700px) {
     .profile-img-large {
         width: 180px;
