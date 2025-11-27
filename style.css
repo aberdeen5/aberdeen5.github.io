@@ -1,0 +1,130 @@
+/* =========================================
+   GLOBAL STYLES
+   ========================================= */
+body {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d0d0d;
+    color: #e6e6e6;
+}
+
+.content-container {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* =========================================
+   BEREICHE ALLGEMEIN MIT 3PX RAHMEN
+   ========================================= */
+.area {
+    padding: 30px 30px; /* gleichmäßig oben/unten + links/rechts */
+    margin-bottom: 10px; /* sehr kleiner Abstand zwischen Bereichen */
+    border-radius: 8px;
+    border: 3px solid;
+}
+
+/* Subtile Farbunterschiede + Rahmen leicht dunkler */
+.area-1 { background-color: #1a1a1a; border-color: #141414; }
+.area-2 { background-color: #202020; border-color: #181818; }
+.area-3 { background-color: #242424; border-color: #1c1c1c; }
+.area-4 { background-color: #1f1f1f; border-color: #161616; }
+.area-5 { background-color: #181818; border-color: #101010; }
+
+/* =========================================
+   BEREICH 1: PROFIL ZENTRIERT
+   ========================================= */
+.area-inner-center {
+    display: flex;
+    flex-direction: column; /* Bild über Name über Text */
+    align-items: center;    /* horizontal zentriert */
+    text-align: center;     /* Text mittig */
+    gap: 20px;
+}
+
+.profile-img-large {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px; /* abgerundete Ecken */
+    border: 3px solid #2a2a2a;
+}
+
+.area-1 h2 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.area-1 p {
+    font-size: 1.2em;
+    color: #bfbfbf;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* =========================================
+   HEADINGS MIT ICONS
+   ========================================= */
+h2 {
+    font-size: 1.9em;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #e6e6e6;
+}
+
+.icon-blue {
+    color: #4aa3ff;
+}
+
+/* =========================================
+   LISTEN UND ICONS
+   ========================================= */
+.simple-list, .about-list, .contact-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+}
+
+.simple-list li, .about-list li, .contact-list li {
+    display: flex;
+    align-items: center;
+    margin: 6px 0;
+    font-size: 1.15em;
+    line-height: 1.6;
+}
+
+.simple-list li i,
+.about-list li i,
+.contact-list li i {
+    margin-right: 12px; /* Abstand Icon-Text */
+    min-width: 20px;
+    flex-shrink: 0;
+}
+
+/* =========================================
+   LINKS
+   ========================================= */
+a {
+    color: #4aa3ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 700px) {
+    .profile-img-large {
+        width: 180px;
+        height: 180px;
+    }
+    .area-inner-center {
+        gap: 15px;
+    }
+}
